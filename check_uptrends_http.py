@@ -69,7 +69,6 @@ for item in response_json['Data']:
   status_resolve_time = item['Attributes']['ResolveTime']
   status_connection_time = item['Attributes']['ConnectionTime']
   status_download_time = item['Attributes']['DownloadTime']
-  status_total_bytes = item['Attributes']['TotalBytes']
   checkpoint_serverid = item['Relationships'][0]['Id']
 
 # Get CheckpointServer
@@ -84,8 +83,7 @@ for item in response_json['Relationships']:
 perfdata = (" | TotalTime=" + str(status_total_time) + "ms" + ";" + str(monitor_loadtimelimit1) + ";" + str(monitor_loadtimelimit2) +
 " ResolveTime=" + str(status_resolve_time) +
 "ms ConnectionTime=" + str(status_connection_time) +
-"ms DownloadTime=" + str(status_download_time) +
-"ms TotalBytes=" + str(status_total_bytes) + "b"
+"ms DownloadTime=" + str(status_download_time)
 )
 
 # Beautify timestamp & message
@@ -105,5 +103,5 @@ if status_message != "OK":
     exit(2)
 
 # If we made it this far, check is OK
-print ("OK: " + monitor_name + " responds with OK status at: " + status_timestamp + " from: " + checkpoint_server_name + perfdata)
+print ("OK: " + monitor_name.decode('utf-8') + " responds with OK status at: " + status_timestamp + " from: " + checkpoint_server_name + perfdata)
 exit(0)
