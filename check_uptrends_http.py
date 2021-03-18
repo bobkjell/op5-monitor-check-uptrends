@@ -88,8 +88,9 @@ perfdata = (" | TotalTime=" + str(status_total_time) + "ms" + ";" + str(monitor_
 "ms TotalBytes=" + str(status_total_bytes) + "b"
 )
 
-# Beautify timestamp
+# Beautify timestamp & message
 status_timestamp = datetime.datetime.strptime(status_timestamp, '%Y-%m-%dT%H:%M:%S.%f').strftime("%H:%M:%S")
+status_message = status_message.encode('utf-8').strip()
 
 # Check for error results
 if status_message != "OK":
