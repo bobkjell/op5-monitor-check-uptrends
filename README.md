@@ -4,7 +4,7 @@ Requires login and API access to Uptrends: <br/>
 https://www.uptrends.com/ <br/>
 https://www.uptrends.com/support/kb/api/authentication-v4 <br/>
 
-Currently only supports http(s) type of checks in Uptrends. <br/>
+Currently only supports http(s) and Transactional type of checks in Uptrends. <br/>
 
 ![alt text](https://github.com/bobkjell/op5-monitor-check-uptrends/blob/main/uptrends-checks.png "Uptrends service-checks")
 
