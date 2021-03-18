@@ -10,6 +10,7 @@ Currently only supports http(s) type of checks in Uptrends. <br/>
 
 ## Requires
 * python-requests
+* Python 2.7
 * Uptrends API credentials
 
 ## Usage
