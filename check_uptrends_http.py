@@ -8,8 +8,11 @@
 # - - - - - - - - - - - - - - - robert.claesson@gmail.com - -
 
 # Modules
-import requests, base64, argparse, json, urllib3, datetime
+import requests, base64, argparse, json, urllib3, datetime, os
 urllib3.disable_warnings()
+
+# ENV
+os.environ['LC_ALL'] = 'en_US.UTF-8'
 
 # Arguments
 parser = argparse.ArgumentParser(description="Get monitoring statistics from Uptrends https(s) checks for ITRS OP5 Monitor.")
@@ -110,5 +113,5 @@ if status_message != "OK":
     exit(2)
 
 # If we made it this far, check is OK
-print ("OK: " + monitor_name.decode('utf-8') + " responds with OK status at: " + status_timestamp + " from: " + checkpoint_server_name + perfdata)
+print ("OK: " + monitor_name + " responds with OK status at: " + status_timestamp + " from: " + checkpoint_server_name + perfdata)
 exit(0)
