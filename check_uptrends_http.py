@@ -63,7 +63,6 @@ response_json = format_json(request)
 # Parse check info
 for item in response_json['Data']:
   status_message = item['Attributes']['ErrorDescription']
-  status_long_message = item['Attributes']['ErrorMessage']
   status_code = item['Attributes']['ErrorCode']
   status_timestamp = item['Attributes']['Timestamp']
   status_total_time = item['Attributes']['TotalTime']
