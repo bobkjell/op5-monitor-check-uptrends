@@ -113,5 +113,5 @@ if status_message != "OK":
     exit(2)
 
 # If we made it this far, check is OK
-print ("OK: " + monitor_name + " responds with OK status at: " + status_timestamp + " from: " + checkpoint_server_name + perfdata)
+print ("OK: " + monitor_name.encode('utf-8') + " responds with OK status at: " + status_timestamp + " from: " + checkpoint_server_name.encode('utf-8') + perfdata)
 exit(0)
