@@ -103,13 +103,13 @@ status_message = status_message.encode('utf-8').strip()
 # Check for error results
 if status_message != "OK":
   if status_code == 6001:
-    print ("CRITICAL: " + status_message + "(crit) at: " + status_timestamp + " from: " + checkpoint_server_name  + perfdata)
+    print ("CRITICAL: " + status_message + "(crit) at: " + status_timestamp + " from: " + checkpoint_server_name.encode('utf-8')  + perfdata)
     exit(2)
   elif status_code == 6000:
-    print ("WARNING: " + status_message + "(warn) at: " + status_timestamp + " from: " + checkpoint_server_name + perfdata)
+    print ("WARNING: " + status_message + "(warn) at: " + status_timestamp + " from: " + checkpoint_server_name.encode('utf-8') + perfdata)
     exit(1)
   else:
-    print ("CRITICAL: " + status_message + " from: " + checkpoint_server_name + perfdata)
+    print ("CRITICAL: " + status_message + " from: " + checkpoint_server_name.encode('utf-8') + perfdata)
     exit(2)
 
 # If we made it this far, check is OK
